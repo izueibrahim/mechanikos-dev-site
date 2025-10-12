@@ -94,7 +94,7 @@ export default function Services() {
       <Container className="mt-16">
         <FadeIn>
           <p className="text-lg font-semibold text-neutral-950">
-            At Mechanikos, we don't just offer services, we offer solutions:
+            At Mechanikos, we don&apos;t just offer services, we offer solutions:
           </p>
         </FadeIn>
       </Container>
