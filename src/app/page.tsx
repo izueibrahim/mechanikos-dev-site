@@ -262,7 +262,7 @@ export default async function Home() {
 
   return (
     <RootLayout>
-      <Container className="mt-24 sm:mt-32 md:mt-56">
+      <Container className="mt-24 sm:mt-32 md:min-h-screen md:flex md:items-center md:justify-start md:mt-0">
         <FadeIn className="max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-neutral-950 sm:text-7xl">
             Data. Tech. Marketing.
