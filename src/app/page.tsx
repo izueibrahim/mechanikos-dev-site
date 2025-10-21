@@ -19,6 +19,7 @@ import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
 import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
+import mechanikosHeroLogo from '@/images/mechanikos_hero_logo.svg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 
@@ -262,8 +263,20 @@ export default async function Home() {
 
   return (
     <RootLayout>
-      <Container className="mt-24 sm:mt-32 md:min-h-screen md:flex md:items-center md:justify-start md:mt-0">
-        <FadeIn className="max-w-3xl">
+      <Container className="relative mt-24 sm:mt-32 md:min-h-screen md:flex md:items-center md:justify-start md:mt-0 overflow-hidden">
+        {/* Large background logo */}
+        <div className="absolute inset-0 flex items-start justify-center pointer-events-none">
+          <Image
+            src={mechanikosHeroLogo}
+            alt=""
+            className="w-full max-w-7xl opacity-75"
+            priority
+            unoptimized
+          />
+        </div>
+        
+        {/* Content */}
+        <FadeIn className="relative z-10 max-w-3xl">
           <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-neutral-950 sm:text-7xl">
             Data. Tech. Marketing.
           </h1>
