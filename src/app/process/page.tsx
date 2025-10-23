@@ -56,7 +56,7 @@ function Section({
 
 function Discover() {
   return (
-    <Section title="Discover" image={{ src: imageWhiteboard }}>
+    <Section title="Cerebrax" image={{ src: imageWhiteboard }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           We work closely with our clients to understand their{' '}
@@ -97,7 +97,7 @@ function Discover() {
 
 function Build() {
   return (
-    <Section title="Build" image={{ src: imageLaptop, shape: 1 }}>
+    <Section title="PENDAPAT" image={{ src: imageLaptop, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           Based off of the discovery phase, we develop a comprehensive roadmap
@@ -133,7 +133,61 @@ function Build() {
 
 function Deliver() {
   return (
-    <Section title="Deliver" image={{ src: imageMeeting, shape: 2 }}>
+    <Section title="MyBuletin" image={{ src: imageMeeting, shape: 2 }}>
+      <div className="space-y-6 text-base text-neutral-600">
+        <p>
+          About halfway through the Build phase, we push each project out by 6
+          weeks due to a change in{' '}
+          <strong className="font-semibold text-neutral-950">
+            requirements
+          </strong>
+          . This allows us to increase the budget a final time before launch.
+        </p>
+        <p>
+          Despite largely using pre-built components, most of the{' '}
+          <strong className="font-semibold text-neutral-950">progress</strong>{' '}
+          on each project takes place in the final 24 hours. The development
+          time allocated to each client is actually spent making augmented
+          reality demos that go viral on social media.
+        </p>
+        <p>
+          We ensure that the main pages of the site are{' '}
+          <strong className="font-semibold text-neutral-950">
+            fully functional
+          </strong>{' '}
+          at launch — the auxiliary pages will, of course, be lorem ipusm shells
+          which get updated as part of our exorbitant{' '}
+          <strong className="font-semibold text-neutral-950">
+            maintenance
+          </strong>{' '}
+          retainer.
+        </p>
+      </div>
+
+      <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
+        Included in this phase
+      </h3>
+      <List className="mt-8">
+        <ListItem title="Testing">
+          Our projects always have 100% test coverage, which would be impressive
+          if our tests weren’t as porous as a sieve.
+        </ListItem>
+        <ListItem title="Infrastructure">
+          To ensure reliability we only use the best Digital Ocean droplets that
+          $4 a month can buy.
+        </ListItem>
+        <ListItem title="Support">
+          Because we hold the API keys for every critical service your business
+          uses, you can expect a lifetime of support, and invoices, from us.
+        </ListItem>
+      </List>
+    </Section>
+  )
+}
+
+function TrasAuction() {
+  return (
+    <Section title="TRAS Auction" image={{ src: imageMeeting, shape: 2 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
           About halfway through the Build phase, we push each project out by 6
@@ -249,11 +303,9 @@ export const metadata: Metadata = {
 export default function Process() {
   return (
     <RootLayout>
-      <PageIntro eyebrow="Our process" title="How we work">
+      <PageIntro eyebrow="Our product" title="How we work">
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+          We’re not just in the business of offering solutions; we create products that cater to your needs.
         </p>
       </PageIntro>
 
@@ -261,6 +313,7 @@ export default function Process() {
         <Discover />
         <Build />
         <Deliver />
+        <TrasAuction />
       </div>
 
       <Values />

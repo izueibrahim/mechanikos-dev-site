@@ -33,9 +33,9 @@ export function Testimonial({
                 {children}
               </p>
             </blockquote>
-            <figcaption className="mt-10">
+            {/* <figcaption className="mt-10">
               <Image src={client.logo} alt={client.name} unoptimized />
-            </figcaption>
+            </figcaption> */}
           </figure>
         </FadeIn>
       </Container>

@@ -62,17 +62,27 @@ const team = [
     title: 'Leadership',
     people: [
       {
-        name: 'Leslie Alexander',
+        name: 'Rizal',
         role: 'Co-Founder / CEO',
         image: { src: imageLeslieAlexander },
       },
       {
-        name: 'Michael Foster',
+        name: 'Azril',
         role: 'Co-Founder / CTO',
         image: { src: imageMichaelFoster },
       },
       {
-        name: 'Dries Vincent',
+        name: 'Rashdan',
+        role: 'Partner & Business Relations',
+        image: { src: imageDriesVincent },
+      },
+      {
+        name: 'Mamu',
+        role: 'Partner & Business Relations',
+        image: { src: imageDriesVincent },
+      },
+      {
+        name: 'Johardi',
         role: 'Partner & Business Relations',
         image: { src: imageDriesVincent },
       },
@@ -190,23 +200,16 @@ export default async function About() {
 
   return (
     <RootLayout>
-      <PageIntro eyebrow="About us" title="Our strength is collaboration">
+      <PageIntro eyebrow="About us" title="Mechanikos. Data. Tech. Marketing">
         <p>
-          We believe that our strength lies in our collaborative approach, which
-          puts our clients at the center of everything we do.
+          That’s our secret sauce. We take data, sprinkle in some tech magic, and mix it with marketing know-how to cook up campaigns that actually work. Think of us as your 360° growth engine—smart, fast, and impossible to ignore.
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
-            Studio was started by three friends who noticed that developer
-            studios were charging clients double what an in-house team would
-            cost. Since the beginning, we have been committed to doing things
-            differently by charging triple instead.
+            We’re tech-native, insight-obsessed, and results-driven, but we never take ourselves too seriously. Our goal? To make your brand smarter, faster, and impossible to ignore.
           </p>
           <p>
-            At Studio, we’re more than just colleagues — we’re a family. This
-            means we pay very little and expect people to work late. We want our
-            employees to bring their whole selves to work. In return, we just
-            ask that they keep themselves there until at least 6:30pm.
+            “At Mechanikos, we love two things: AI and making brands grow. Think of us as a 360° AI-Tech marketing engine – powered by data, fuelled by technology, and turbocharged with strategy.”
           </p>
         </div>
       </PageIntro>

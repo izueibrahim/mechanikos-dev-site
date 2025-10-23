@@ -11,9 +11,9 @@ const navigation = [
   {
     title: 'Work',
     links: [
-      { title: 'FamilyFund', href: '/case-study/family-fund' },
-      { title: 'Unseal', href: '/case-study/unseal' },
-      { title: 'Phobia', href: '/case-study/phobia' },
+      { title: 'PBenterprise', href: '/case-study/family-fund' },
+      { title: 'DelimaFlix', href: '/case-study/payu' },
+      { title: 'MARC', href: '/case-study/anms' },
       {
         title: (
           <>
