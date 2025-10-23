@@ -50,7 +50,7 @@ function Culture() {
             are allowed to have LinkedIn profiles.
           </GridListItem>
           <GridListItem title="Trust" invert>
-            We don't care when our team works just as long as they are working
+            We don&apos;t care when our team works just as long as they are working
             every waking second.
           </GridListItem>
           <GridListItem title="Compassion" invert>
@@ -202,14 +202,14 @@ export default async function About() {
     <RootLayout>
       <PageIntro eyebrow="About us" title="Mechanikos. Data. Tech. Marketing">
         <p>
-          That's our secret sauce. We take data, sprinkle in some tech magic, and mix it with marketing know-how to cook up campaigns that actually work. Think of us as your 360° growth engine—smart, fast, and impossible to ignore.
+          That&apos;s our secret sauce. We take data, sprinkle in some tech magic, and mix it with marketing know-how to cook up campaigns that actually work. Think of us as your 360° growth engine—smart, fast, and impossible to ignore.
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
-            We're tech-native, insight-obsessed, and results-driven, but we never take ourselves too seriously. Our goal? To make your brand smarter, faster, and impossible to ignore.
+            We&apos;re tech-native, insight-obsessed, and results-driven, but we never take ourselves too seriously. Our goal? To make your brand smarter, faster, and impossible to ignore.
           </p>
           <p>
-            "At Mechanikos, we love two things: AI and making brands grow. Think of us as a 360° AI-Tech marketing engine – powered by data, fuelled by technology, and turbocharged with strategy."
+            &ldquo;At Mechanikos, we love two things: AI and making brands grow. Think of us as a 360° AI-Tech marketing engine – powered by data, fuelled by technology, and turbocharged with strategy.&rdquo;
           </p>
         </div>
       </PageIntro>
