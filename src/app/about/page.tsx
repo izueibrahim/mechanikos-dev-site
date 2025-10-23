@@ -1,4 +1,3 @@
-import { type Metadata } from 'next'
 import Image from 'next/image'
 
 import { Border } from '@/components/Border'
@@ -24,6 +23,13 @@ import imageMichaelFoster from '@/images/team/michael-foster.jpg'
 import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
 import { loadArticles } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
+import CircularGallery from './CircularGallery'
+
+export const metadata = {
+  title: 'About Us',
+  description:
+    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
+}
 
 function Culture() {
   return (
@@ -44,7 +50,7 @@ function Culture() {
             are allowed to have LinkedIn profiles.
           </GridListItem>
           <GridListItem title="Trust" invert>
-            We don’t care when our team works just as long as they are working
+            We don't care when our team works just as long as they are working
             every waking second.
           </GridListItem>
           <GridListItem title="Compassion" invert>
@@ -189,12 +195,6 @@ function Team() {
   )
 }
 
-export const metadata: Metadata = {
-  title: 'About Us',
-  description:
-    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
-}
-
 export default async function About() {
   let blogArticles = (await loadArticles()).slice(0, 2)
 
@@ -202,28 +202,32 @@ export default async function About() {
     <RootLayout>
       <PageIntro eyebrow="About us" title="Mechanikos. Data. Tech. Marketing">
         <p>
-          That’s our secret sauce. We take data, sprinkle in some tech magic, and mix it with marketing know-how to cook up campaigns that actually work. Think of us as your 360° growth engine—smart, fast, and impossible to ignore.
+          That's our secret sauce. We take data, sprinkle in some tech magic, and mix it with marketing know-how to cook up campaigns that actually work. Think of us as your 360° growth engine—smart, fast, and impossible to ignore.
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
-            We’re tech-native, insight-obsessed, and results-driven, but we never take ourselves too seriously. Our goal? To make your brand smarter, faster, and impossible to ignore.
+            We're tech-native, insight-obsessed, and results-driven, but we never take ourselves too seriously. Our goal? To make your brand smarter, faster, and impossible to ignore.
           </p>
           <p>
-            “At Mechanikos, we love two things: AI and making brands grow. Think of us as a 360° AI-Tech marketing engine – powered by data, fuelled by technology, and turbocharged with strategy.”
+            "At Mechanikos, we love two things: AI and making brands grow. Think of us as a 360° AI-Tech marketing engine – powered by data, fuelled by technology, and turbocharged with strategy."
           </p>
         </div>
       </PageIntro>
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="35" label="Underpaid employees" />
-          <StatListItem value="52" label="Placated clients" />
-          <StatListItem value="$25M" label="Invoices billed" />
+          <StatListItem value="50" label="Employees" />
+          <StatListItem value="102" label="Private & Gov clients" />
+          <StatListItem value="200" label="Completed Projects" />
         </StatList>
       </Container>
 
       <Culture />
 
       <Team />
+
+      <div className="mt-24 sm:mt-32 lg:mt-40 h-[400px] sm:h-[500px] lg:h-[800px] relative overflow-hidden">
+        <CircularGallery bend={0} textColor="#ffffff" borderRadius={0.05} scrollEase={0.05} />
+      </div>
 
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
