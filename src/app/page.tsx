@@ -317,7 +317,7 @@ export default async function Home() {
         Ready to Power Your Brand with 360 marketing and AI technology? Let us build your systems of growth.
         <br />
         <br />
-        Whether it's strategy, tech, creative, media, or analytics, we make your brand smarter, faster, and impossible to ignore.
+        Whether it&apos;s strategy, tech, creative, media, or analytics, we make your brand smarter, faster, and impossible to ignore.
       </Testimonial>
 
       <ContactSection />
