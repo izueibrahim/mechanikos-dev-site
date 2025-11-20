@@ -24,6 +24,7 @@ import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
 import { loadArticles } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 import CircularGallery from './CircularGallery'
+import { fetchGlobalData } from '@/lib/globalData'
 
 export const metadata = {
   title: 'About Us',
@@ -197,21 +198,22 @@ function Team() {
 
 export default async function About() {
   let blogArticles = (await loadArticles()).slice(0, 2)
+  const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout>
-      <PageIntro eyebrow="About us" title="Mechanikos. Data. Tech. Marketing">
+    <RootLayout globalData={globalData}>
+      <PageIntro eyebrow="About us" title="Data. Tech. Marketing">
         <p>
           That&apos;s our secret sauce. We take data, sprinkle in some tech magic, and mix it with marketing know-how to cook up campaigns that actually work. Think of us as your 360° growth engine—smart, fast, and impossible to ignore.
         </p>
-        <div className="mt-10 max-w-2xl space-y-6 text-base">
+        {/* <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
             We&apos;re tech-native, insight-obsessed, and results-driven, but we never take ourselves too seriously. Our goal? To make your brand smarter, faster, and impossible to ignore.
           </p>
           <p>
             &ldquo;At Mechanikos, we love two things: AI and making brands grow. Think of us as a 360° AI-Tech marketing engine – powered by data, fuelled by technology, and turbocharged with strategy.&rdquo;
           </p>
-        </div>
+        </div> */}
       </PageIntro>
       <Container className="mt-16">
         <StatList>
@@ -226,15 +228,15 @@ export default async function About() {
       <Team />
 
       <div className="mt-24 sm:mt-32 lg:mt-40 h-[400px] sm:h-[500px] lg:h-[800px] relative overflow-hidden">
-        <CircularGallery bend={0} textColor="#ffffff" borderRadius={0.05} scrollEase={0.05} />
+        <CircularGallery bend={0} textColor="#000000" borderRadius={0.05} scrollEase={0.05} />
       </div>
 
-      <PageLinks
+      {/* <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
         intro="Our team of experienced designers and developers has just one thing on their mind; working on your ideas to draw a smile on the face of your users worldwide. From conducting Brand Sprints to UX Design."
         pages={blogArticles}
-      />
+      /> */}
 
       <ContactSection />
     </RootLayout>

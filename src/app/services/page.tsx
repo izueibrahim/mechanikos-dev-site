@@ -7,6 +7,7 @@ import { List, ListItem } from '@/components/List'
 import { PageIntro } from '@/components/PageIntro'
 import { SectionIntro } from '@/components/SectionIntro'
 import { RootLayout } from '@/components/RootLayout'
+import { fetchGlobalData } from '@/lib/globalData'
 
 function ServiceCategory({
   title,
@@ -79,9 +80,11 @@ export const metadata: Metadata = {
     'Experience the future with Mechanikos. Our 360 marketing and AI technology services are powered by cutting-edge AI.',
 }
 
-export default function Services() {
+export default async function Services() {
+  const globalData = await fetchGlobalData()
+
   return (
-    <RootLayout>
+    <RootLayout globalData={globalData}>
       <PageIntro eyebrow="Our Services" title="Solutions that drive growth">
         <p>
           Experience the future with Mechanikos. Our 360 marketing and AI

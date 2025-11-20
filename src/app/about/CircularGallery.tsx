@@ -34,7 +34,7 @@ function getFontSize(font: string): number {
 function createTextTexture(
   gl: GL,
   text: string,
-  font: string = 'bold 30px monospace',
+  font: string = 'bold 12px Mona Sans',
   color: string = 'black'
 ): { texture: Texture; width: number; height: number } {
   const canvas = document.createElement('canvas');
@@ -45,7 +45,7 @@ function createTextTexture(
   const metrics = context.measureText(text);
   const textWidth = Math.ceil(metrics.width);
   const fontSize = getFontSize(font);
-  const textHeight = Math.ceil(fontSize * 1.2);
+  const textHeight = Math.ceil(fontSize * 3.2);
 
   canvas.width = textWidth + 20;
   canvas.height = textHeight + 20;
@@ -80,7 +80,7 @@ class Title {
   font: string;
   mesh!: Mesh;
 
-  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif' }: TitleProps) {
+  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '12px Mona Sans' }: TitleProps) {
     autoBind(this);
     this.gl = gl;
     this.plane = plane;
@@ -373,8 +373,8 @@ class Media {
       baseHeight = 750;
     } else if (this.screen.width < 1024) {
       // Tablet: medium images
-      baseWidth = 300;
-      baseHeight = 400;
+      baseWidth = 700;
+      baseHeight = 800;
     } else {
       // Desktop: larger but still reasonable
       baseWidth = 950;
@@ -440,7 +440,7 @@ class App {
       bend = 1,
       textColor = '#ffffff',
       borderRadius = 0,
-      font = 'bold 30px Figtree',
+      font = 'bold 12px Mona Sans',
       scrollSpeed = 2,
       scrollEase = 0.05
     }: AppConfig
@@ -676,9 +676,9 @@ interface CircularGalleryProps {
 export default function CircularGallery({
   items,
   bend = 3,
-  textColor = '#ffffff',
+  textColor = '#000000',
   borderRadius = 0.05,
-  font = 'bold 30px Figtree',
+  font = 'bold 12px Mona Sans',
   scrollSpeed = 2,
   scrollEase = 0.05
 }: CircularGalleryProps) {

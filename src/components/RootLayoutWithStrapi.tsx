@@ -1,17 +1,11 @@
 'use client'
 
-import {
-  createContext,
-  useContext,
-  useState,
-} from 'react'
+import { createContext, useContext, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion'
 
-import { Footer } from '@/components/Footer'
 import { FooterWithStrapi } from '@/components/FooterWithStrapi'
 import { GridPattern } from '@/components/GridPattern'
-import { Header } from '@/components/Header'
 import { HeaderWithStrapi } from '@/components/HeaderWithStrapi'
 import { GlobalData } from '@/lib/globalData'
 
@@ -28,10 +22,6 @@ interface RootLayoutInnerProps {
 function RootLayoutInner({ children, globalData }: RootLayoutInnerProps) {
   let shouldReduceMotion = useReducedMotion()
 
-  // Use Strapi components if globalData is available, otherwise use default
-  const HeaderComponent = globalData ? HeaderWithStrapi : Header
-  const FooterComponent = globalData ? FooterWithStrapi : Footer
-
   return (
     <MotionConfig transition={shouldReduceMotion ? { duration: 0 } : undefined}>
       <motion.div
@@ -39,21 +29,18 @@ function RootLayoutInner({ children, globalData }: RootLayoutInnerProps) {
         style={{ borderTopLeftRadius: 40, borderTopRightRadius: 40 }}
         className="relative flex flex-auto overflow-hidden bg-white"
       >
-        <motion.div
-          layout
-          className="relative isolate flex w-full flex-col"
-        >
+        <motion.div layout className="relative isolate flex w-full flex-col">
           <GridPattern
             className="absolute inset-x-0 top-0 -z-10 h-[1000px] w-full mask-[linear-gradient(to_bottom_left,white_40%,transparent_50%)] fill-neutral-50 stroke-neutral-950/5"
             yOffset={-96}
             interactive
           />
 
-          <HeaderComponent globalData={globalData} />
+          <HeaderWithStrapi globalData={globalData} />
 
           <main className="w-full flex-auto">{children}</main>
 
-          <FooterComponent globalData={globalData} />
+          <FooterWithStrapi globalData={globalData} />
         </motion.div>
       </motion.div>
     </MotionConfig>
@@ -65,7 +52,7 @@ interface RootLayoutProps {
   globalData?: GlobalData | null
 }
 
-export function RootLayout({ children, globalData }: RootLayoutProps) {
+export function RootLayoutWithStrapi({ children, globalData }: RootLayoutProps) {
   let pathname = usePathname()
   let [logoHovered, setLogoHovered] = useState(false)
 
@@ -77,3 +64,5 @@ export function RootLayout({ children, globalData }: RootLayoutProps) {
     </RootLayoutContext.Provider>
   )
 }
+
+

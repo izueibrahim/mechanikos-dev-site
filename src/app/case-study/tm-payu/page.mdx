@@ -1,0 +1,68 @@
+import logo from '@/images/clients/unseal/logomark-dark.svg'
+import imageHero from './hero.jpg'
+
+export const caseStudy = {
+  client: 'Telekom Malaysia (TM)',
+  title: 'TM Payu',
+  description:
+    'Telekom Malaysia engaged us to develop a billing system for the MYGovServ platform, a national digital infrastructure serving over 15,000 government sites across ministries and agencies in Malaysia. The goal was to create a custom full-suite billing engine capable of managing complex network usage for both Pay-You-Use and No-Pay-You-Use models, while supporting diverse package tiers, rate structures, and financial policies.',
+  summary: [
+    'Telekom Malaysia engaged us to develop a billing system for the MYGovServ platform, a national digital infrastructure serving over 15,000 government sites across ministries and agencies in Malaysia. The goal was to create a custom full-suite billing engine capable of managing complex network usage for both Pay-You-Use and No-Pay-You-Use models, while supporting diverse package tiers, rate structures, and financial policies.',
+    'We engineered a high-availability billing architecture designed for 24/7 reliability, accuracy, and resilience, featuring an aggregation channel (Ingest and ETL), followed by a custom-built calculation engine that interprets package logic, applies billing conditions, and processes PAYU computations automatically.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2021',
+  service: 'Tech',
+  industry: 'Telco',
+  scope: 'UI/UX design, CMS development, app front end development',
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Goals
+
+Telekom Malaysia engaged us to develop a billing system for the MYGovServ platform, a national digital infrastructure serving over 15,000 government sites across ministries and agencies in Malaysia. The goal was to create a custom full-suite billing engine capable of managing complex network usage for both Pay-You-Use and No-Pay-You-Use models, while supporting diverse package tiers, rate structures, and financial policies.
+
+Additionally, TM required a deployment solution to provide billing visibility at every level — from the Federal Government to Jabatan Digital Negara (JDN) down to individual ministries and agencies — complete with usage projections and budget monitoring. The platform needed to integrate tightly with the existing MYGovServ infrastructure, network topology, and internal application ecosystem.
+
+## Insights
+
+No commercially available off-the-shelf billing system could support the scale, complexity, and policy-driven billing logic required by a national platform like MYGovServ. The billing process involved multiple charging models including Fixed, PAYU, LAD (Liquidated Ascertained Damages), TBU (temporary bandwidth under-utilization), and varying billing periods based on device type, subscription package, and agency classification.
+
+Prior to this, billing operations were manually activated via Excel spreadsheets and macros — a method that was labor-intensive, prone to human error, and unable to scale to thousands of billing entries monthly with audit-level precision.
+
+## Approach & Solutions
+
+Working closely with TM, we engineered a high-availability billing architecture designed for 24/7 reliability, accuracy, and resilience. To handle the massive volume of network data coming from thousands of endpoints from ManageEngine OpManager, we introduced a middleware-driven pipeline featuring an aggregation channel (Ingest and ETL), followed by a custom-built calculation engine that interprets package logic, applies billing conditions, and processes PAYU computations automatically.
+
+A custom analytics dashboard was developed to deliver real-time financial insights, enabling ministries and agencies to monitor usage trends, allocation forecasting, and budget status through a clear multi-user interface.
+
+Every component was built following telecom industry enterprise standards, aligned with national infrastructure compliance, cybersecurity protocols, and TM's strict internal governance.
+
+## What we did
+
+<TagList>
+  <TagListItem>Billing System Architecture</TagListItem>
+  <TagListItem>Custom Calculation Engine</TagListItem>
+  <TagListItem>Data Pipeline (ETL)</TagListItem>
+  <TagListItem>Analytics Dashboard</TagListItem>
+  <TagListItem>National Infrastructure Integration</TagListItem>
+</TagList>
+
+## Results
+
+The MYGovServ billing system is now fully automated and live at national scale, powering accurate monthly billing for over 15,000 government clients with zero-touch execution and zero manual intervention. Government billing reconciliation teams can now process billing faster, maintain audit readiness, and generate high-level billing intelligence on demand through dashboard analytics.
+
+This transformation marked a significant shift — from fragmented, macro-based billing workflows to a centralized national-grade billing ecosystem built to support Malaysia's digital government agenda, with TM as the backbone infrastructure provider.
+
+<StatList>
+  <StatListItem value="15,000+" label="Government Sites" />
+  <StatListItem value="24/7" label="High Availability" />
+  <StatListItem value="Zero-touch" label="Automated Billing" />
+  <StatListItem value="National Scale" label="Infrastructure" />
+</StatList>
+

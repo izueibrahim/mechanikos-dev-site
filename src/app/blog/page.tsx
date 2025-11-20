@@ -11,6 +11,7 @@ import { PageIntro } from '@/components/PageIntro'
 import { RootLayout } from '@/components/RootLayout'
 import { formatDate } from '@/lib/formatDate'
 import { loadArticles } from '@/lib/mdx'
+import { fetchGlobalData } from '@/lib/globalData'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -20,9 +21,10 @@ export const metadata: Metadata = {
 
 export default async function Blog() {
   let articles = await loadArticles()
+  const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout>
+    <RootLayout globalData={globalData}>
       <PageIntro eyebrow="Blog" title="The latest articles and news">
         <p>
           Stay up-to-date with the latest industry news as our marketing teams

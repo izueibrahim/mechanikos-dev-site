@@ -1,10 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useTheme } from 'next-themes'
 import {
   Popover,
   PopoverButton,
@@ -14,8 +13,9 @@ import {
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
+import { GlobalData } from '@/lib/globalData'
+import { getStrapiMediaUrl } from '@/lib/strapi'
 import mechLogo from '@/images/mechanikos-logo.svg'
-// import avatarImage from '@/images/avatar.jpg'
 
 function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -62,9 +62,22 @@ function MobileNavItem({
   )
 }
 
-function MobileNavigation(
-  props: React.ComponentPropsWithoutRef<typeof Popover>,
-) {
+// Default navigation items (fallback)
+const defaultNavItems = [
+  { label: 'About', url: '/about' },
+  { label: 'Services', url: '/services' },
+  { label: 'Product', url: '/process' },
+  { label: 'Case Study', url: '/case-study' },
+  { label: 'Blog', url: '/blog' },
+  { label: 'Contact', url: '/contact' },
+]
+
+function MobileNavigation({
+  navItems = defaultNavItems,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof Popover> & {
+  navItems?: Array<{ label: string; url: string }>
+}) {
   return (
     <Popover {...props}>
       <PopoverButton className="group flex items-center rounded-full bg-black px-4 py-2 text-sm font-medium text-white shadow-lg backdrop-blur-sm">
@@ -84,18 +97,15 @@ function MobileNavigation(
           <PopoverButton aria-label="Close menu" className="-m-1 p-1">
             <CloseIcon className="h-6 w-6 text-white" />
           </PopoverButton>
-          <h2 className="text-sm font-medium text-white">
-            Menu
-          </h2>
+          <h2 className="text-sm font-medium text-white">Menu</h2>
         </div>
         <nav className="mt-6">
           <ul className="-my-2 divide-y divide-white/10 text-base text-white">
-            <MobileNavItem href="/about">About</MobileNavItem>
-            <MobileNavItem href="/services">Services</MobileNavItem>
-            <MobileNavItem href="/case-study">Case Study</MobileNavItem>
-            <MobileNavItem href="/process">Products</MobileNavItem>
-            <MobileNavItem href="/blog">Blog</MobileNavItem>
-            <MobileNavItem href="/contact">Contact</MobileNavItem>
+            {navItems.map((item, index) => (
+              <MobileNavItem key={index} href={item.url}>
+                {item.label}
+              </MobileNavItem>
+            ))}
           </ul>
         </nav>
       </PopoverPanel>
@@ -118,9 +128,7 @@ function NavItem({
         href={href}
         className={clsx(
           'relative block px-4 py-2 transition whitespace-nowrap',
-          isActive
-            ? 'text-[#8360F8]'
-            : 'hover:text-[#8360F8]',
+          isActive ? 'text-[#8360F8]' : 'hover:text-[#8360F8]'
         )}
       >
         {children}
@@ -132,16 +140,20 @@ function NavItem({
   )
 }
 
-function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
+function DesktopNavigation({
+  navItems = defaultNavItems,
+  ...props
+}: React.ComponentPropsWithoutRef<'nav'> & {
+  navItems?: Array<{ label: string; url: string }>
+}) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-black px-6 text-sm font-medium text-white shadow-lg backdrop-blur-sm whitespace-nowrap">
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/services">Services</NavItem>
-        <NavItem href="/process">Product</NavItem>
-        <NavItem href="/case-study">Case Study</NavItem>
-        <NavItem href="/blog">Blog</NavItem>
-        <NavItem href="/contact">Contact</NavItem>
+        {navItems.map((item, index) => (
+          <NavItem key={index} href={item.url}>
+            {item.label}
+          </NavItem>
+        ))}
       </ul>
     </nav>
   )
@@ -161,7 +173,7 @@ function AvatarContainer({
     <div
       className={clsx(
         className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10',
+        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg ring-1 shadow-zinc-800/5 ring-zinc-900/5 backdrop-blur-sm dark:bg-zinc-800/90 dark:ring-white/10'
       )}
       {...props}
     />
@@ -181,17 +193,33 @@ function Avatar({
       aria-label="Home"
       className={clsx(className, 'pointer-events-auto')}
       {...props}
-    >
-    </Link>
+    />
   )
 }
 
-export function Header({ globalData }: { globalData?: any }) {
+interface HeaderProps {
+  globalData?: GlobalData | null
+}
+
+export function HeaderWithStrapi({ globalData }: HeaderProps) {
   let isHomePage = usePathname() === '/'
 
   let headerRef = useRef<React.ElementRef<'div'>>(null)
   let avatarRef = useRef<React.ElementRef<'div'>>(null)
   let isInitial = useRef(true)
+
+  // Get navigation items from Strapi or use defaults
+  const navItems = globalData?.header?.navItems?.map((item) => ({
+    label: item.label,
+    url: item.url,
+  })) || defaultNavItems
+
+  // Get logo from Strapi or use default
+  const logoUrl = globalData?.header?.logo?.image?.url
+    ? getStrapiMediaUrl(globalData.header.logo.image.url)
+    : mechLogo
+
+  const logoAlt = globalData?.header?.logo?.image?.alternativeText || globalData?.header?.logo?.label || 'Mechanikos'
 
   useEffect(() => {
     let downDelay = avatarRef.current?.offsetTop ?? 0
@@ -214,14 +242,12 @@ export function Header({ globalData }: { globalData?: any }) {
       let scrollY = clamp(
         window.scrollY,
         0,
-        document.body.scrollHeight - window.innerHeight,
+        document.body.scrollHeight - window.innerHeight
       )
 
       if (isInitial.current) {
         setProperty('--header-position', 'sticky')
       }
-
-      // setProperty('--content-offset', `${downDelay}px`)
 
       if (isInitial.current || scrollY < downDelay) {
         setProperty('--header-height', `${downDelay + height}px`)
@@ -266,7 +292,7 @@ export function Header({ globalData }: { globalData?: any }) {
 
       setProperty(
         '--avatar-image-transform',
-        `translate3d(${x}rem, 0, 0) scale(${scale})`,
+        `translate3d(${x}rem, 0, 0) scale(${scale})`
       )
 
       let borderScale = 1 / (toScale / scale)
@@ -359,20 +385,27 @@ export function Header({ globalData }: { globalData?: any }) {
               <div className="flex flex-1 items-center">
                 <Link href="/" aria-label="Home" className="pointer-events-auto">
                   <Image
-                    src={mechLogo}
-                    alt="Mechanikos"
+                    src={logoUrl}
+                    alt={logoAlt}
                     className="h-10 w-10"
+                    width={40}
+                    height={40}
                     priority
                   />
                 </Link>
               </div>
               <div className="flex flex-1 justify-end md:justify-center">
-                <MobileNavigation className="pointer-events-auto md:hidden" />
-                <DesktopNavigation className="pointer-events-auto hidden md:block" />
+                <MobileNavigation
+                  navItems={navItems}
+                  className="pointer-events-auto md:hidden"
+                />
+                <DesktopNavigation
+                  navItems={navItems}
+                  className="pointer-events-auto hidden md:block"
+                />
               </div>
               <div className="flex justify-end md:flex-1">
-                <div className="pointer-events-auto">
-                </div>
+                <div className="pointer-events-auto"></div>
               </div>
             </div>
           </Container>
@@ -387,3 +420,4 @@ export function Header({ globalData }: { globalData?: any }) {
     </>
   )
 }
+

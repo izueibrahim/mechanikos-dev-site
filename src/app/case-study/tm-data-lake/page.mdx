@@ -1,0 +1,76 @@
+import logo from '@/images/clients/unseal/logomark-dark.svg'
+import imageHero from './hero.jpg'
+
+export const caseStudy = {
+  client: 'Telekom Malaysia (TM)',
+  title: 'TM Data Lake',
+  description:
+    'As part of its national MYGovServ 2.0 initiative, Telekom Malaysia commissioned us to develop a centralized enterprise-grade Data Lake platform. The goal was to enable slicing, management, and near real-time ingestion of vast volumes of structured and unstructured data originating from 15,000 government sites across Malaysia and globally.',
+  summary: [
+    'As part of its national MYGovServ 2.0 initiative, Telekom Malaysia commissioned us to develop a centralized enterprise-grade Data Lake platform. The goal was to enable slicing, management, and near real-time ingestion of vast volumes of structured and unstructured data originating from 15,000 government sites across Malaysia and globally.',
+    'We architected and delivered a high-throughput Data Lake platform, capable of ingesting, storing, transforming, and analyzing data from thousands of sources — amounting to over 5 million records per minute, 3 TB of raw data monthly consisting about 135 Billion records.',
+  ],
+  logo,
+  image: { src: imageHero },
+  date: '2023',
+  service: 'Tech',
+  industry: 'Telco',
+  scope: 'UI/UX design, CMS development, app front end development',
+}
+
+export const metadata = {
+  title: `${caseStudy.client} Case Study`,
+  description: caseStudy.description,
+}
+
+## Goals
+
+As part of its national MYGovServ 2.0 initiative, **Telekom Malaysia commissioned us to develop a centralized enterprise-grade Data Lake platform**. The goal was to enable slicing, management, and near real-time ingestion of vast volumes of **structured and unstructured data** originating from **15,000 government sites** across Malaysia and globally.
+
+This platform would serve as a **foundation for big data analytics**, helping TM to unlock insights, improve decision-making, and pave the way for future adoption of **machine learning and AI-driven operations** — while integrating seamlessly into the existing MYGovServ 2.0 infrastructure.
+
+## Insights
+
+Data across the MYGovServ environment was scattered across various systems — including **BSS, OSS, billing, monitoring, ticketing, and assurance tools** — with no centralized platform to consolidate, store, and analyze it. TM required a solution capable of handling **high-velocity data streams, complex ETL operations, and real-time analytics**, all deployed on a **Hyperconverged Infrastructure (HCI)**.
+
+At the time, there was no existing platform to serve this function — making the development of a **purpose-built Data Lake** both urgent and critical to the platform's evolution.
+
+## Approach & Solutions
+
+We architected and delivered a **high-throughput Data Lake platform**, capable of ingesting, storing, transforming, and analyzing data from thousands of sources — amounting to over **5 million records per minute, 3 TB of raw data monthly consisting about 135 Billion records**.
+
+Built on a **containerized Kubernetes architecture**, the solution supports:
+
+- **Near real-time data ingestion pipelines**
+- **ETL workflows** tailored to MYGovServ's heterogeneous data landscape
+- **Custom dashboard reporting** for traffic and security insights
+- **Workflow orchestration tools** to manage dependencies and automate scheduled jobs
+- **Monitoring and observability tools** to track system health, ingestion rates, storage usage, and resource allocation
+- **Full administrative control** for TM to monitor, configure, and scale compute, storage, and security settings
+
+The system was designed not only to meet today's operational needs but to **future-proof TM's infrastructure** — setting the stage for advanced analytics and AI/ML model deployment across the public sector.
+
+## What we did
+
+<TagList>
+  <TagListItem>Data Lake Architecture</TagListItem>
+  <TagListItem>Kubernetes Infrastructure</TagListItem>
+  <TagListItem>ETL Pipeline Development</TagListItem>
+  <TagListItem>Real-time Data Ingestion</TagListItem>
+  <TagListItem>Custom Analytics Dashboard</TagListItem>
+  <TagListItem>Workflow Orchestration</TagListItem>
+</TagList>
+
+## Results
+
+TM now operates a **fully integrated, enterprise-scale Data Lake** platform that empowers MYGovServ with real-time visibility into network, infrastructure, and application operations across **15,000+ government sites**. The solution enables data-driven strategy from siloed and reactive to **centralized and predictive**.
+
+By consolidating high-volume data into a unified platform, TM has laid the groundwork for **data-driven governance, national-level operational intelligence, and AI adoption** — positioning Telekom Malaysia and MYGovServ as the backbone of Malaysia's digital transformation.
+
+<StatList>
+  <StatListItem value="5M+" label="Records per Minute" />
+  <StatListItem value="3 TB" label="Monthly Data Volume" />
+  <StatListItem value="135B" label="Total Records" />
+  <StatListItem value="15,000+" label="Government Sites" />
+</StatList>
+

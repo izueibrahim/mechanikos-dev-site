@@ -15,6 +15,7 @@ import imageLaptop from '@/images/laptop.jpg'
 import imageMeeting from '@/images/meeting.jpg'
 import imageWhiteboard from '@/images/whiteboard.jpg'
 import { RootLayout } from '@/components/RootLayout'
+import { fetchGlobalData } from '@/lib/globalData'
 
 function Section({
   title,
@@ -295,14 +296,16 @@ function Values() {
 }
 
 export const metadata: Metadata = {
-  title: 'Our Process',
+  title: 'Our Products',
   description:
     'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
 }
 
-export default function Process() {
+export default async function Products() {
+  const globalData = await fetchGlobalData()
+
   return (
-    <RootLayout>
+    <RootLayout globalData={globalData}>
       <PageIntro eyebrow="Our product" title="How we work">
         <p>
           We’re not just in the business of offering solutions; we create products that cater to your needs.

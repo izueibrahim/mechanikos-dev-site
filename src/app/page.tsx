@@ -22,6 +22,7 @@ import imageLaptop from '@/images/laptop.jpg'
 import mechanikosHeroLogo from '@/images/mechanikos_hero_logo.svg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
+import { fetchGlobalData } from '@/lib/globalData'
 import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon, BriefcaseIcon } from '@heroicons/react/20/solid'
 
 const clients = [
@@ -266,9 +267,10 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   let caseStudies = (await loadCaseStudies()).slice(0, 8)
+  const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout>
+    <RootLayout globalData={globalData}>
       <Container className="relative mt-24 sm:mt-32 md:min-h-screen md:flex md:items-center md:justify-start md:mt-0 overflow-hidden">
         {/* Large background logo */}
         <div className="absolute inset-0 flex items-start m-9 justify-center pointer-events-none">
@@ -312,7 +314,10 @@ export default async function Home() {
           }
         }
       >
-        Ready to Power Your Brand with 360 marketing and AI technology?
+        Ready to Power Your Brand with 360 marketing and AI technology? Let us build your systems of growth.
+        <br />
+        <br />
+        Whether it's strategy, tech, creative, media, or analytics, we make your brand smarter, faster, and impossible to ignore.
       </Testimonial>
 
       <ContactSection />

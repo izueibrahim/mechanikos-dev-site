@@ -21,6 +21,7 @@ import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
 import { formatDate } from '@/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
+import { fetchGlobalData } from '@/lib/globalData'
 
 function CaseStudies({
   caseStudies,
@@ -36,7 +37,7 @@ function CaseStudies({
       </FadeIn>
       <div className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
         {caseStudies.map((caseStudy) => (
-          <FadeIn key={caseStudy.client}>
+          <FadeIn key={caseStudy.href}>
             <article>
               <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
                 <div className="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block">
@@ -145,17 +146,16 @@ export const metadata: Metadata = {
 
 export default async function Work() {
   let caseStudies = await loadCaseStudies()
+  const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout>
+    <RootLayout globalData={globalData}>
       <PageIntro
         eyebrow="Our work"
-        title="Proven solutions for real-world problems."
+        title="At Mechanikos, we don’t just talk about results—we show them."
       >
         <p>
-          We believe in efficiency and maximizing our resources to provide the
-          best value to our clients. The primary way we do that is by re-using
-          the same five projects we’ve been developing for the past decade.
+        Every project is a story of strategy, technology, and creativity that drives measurable impact.
         </p>
       </PageIntro>
 
@@ -165,7 +165,7 @@ export default async function Work() {
         className="mt-24 sm:mt-32 lg:mt-40"
         client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
       >
-        We approached <em>Studio</em> because we loved their past work. They
+        We approached <em>Mechanikos</em> because we loved their past work. They
         delivered something remarkably similar in record time.
       </Testimonial>
 
