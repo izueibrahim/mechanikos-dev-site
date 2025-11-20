@@ -93,7 +93,7 @@ function MobileNavigation(
             <MobileNavItem href="/about">About</MobileNavItem>
             <MobileNavItem href="/services">Services</MobileNavItem>
             <MobileNavItem href="/case-study">Case Study</MobileNavItem>
-            <MobileNavItem href="/process">Products</MobileNavItem>
+            <MobileNavItem href="/products">Products</MobileNavItem>
             <MobileNavItem href="/blog">Blog</MobileNavItem>
             <MobileNavItem href="/contact">Contact</MobileNavItem>
           </ul>
