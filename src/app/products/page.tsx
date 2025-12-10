@@ -60,24 +60,13 @@ function Discover() {
     <Section title="Cerebrax" image={{ src: imageWhiteboard }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We work closely with our clients to understand their{' '}
-          <strong className="font-semibold text-neutral-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
+          Pendapat.my is Malaysia’s homegrown platform that transforms public opinion into powerful insights. Picture a true Member of Parliament who listens to our concerns and communicates them to the decision-makers. This is the representation we truly deserve.
         </p>
         <p>
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{' '}
-          <strong className="font-semibold text-neutral-950">business</strong>{' '}
-          accounts — handing that information over to our forensic accounting
-          team.
+          We make it simple: you share your thoughts, perspectives, and experiences through Twitter polls and AI-call agent surveys. We then turn those voices into meaningful data that helps brands, organizations, and policymakers understand what Malaysians truly feel.
         </p>
         <p>
-          Once the full audit is complete, we report back with a comprehensive{' '}
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
-          more importantly, a budget.
+          At its core, Pendapat.my is more than just polls. It’s a bridge between what Malaysians say and what the nation does.
         </p>
       </div>
 

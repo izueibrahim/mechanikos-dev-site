@@ -155,7 +155,7 @@ export default async function Work() {
         title="At Mechanikos, we don’t just talk about results—we show them."
       >
         <p>
-        Every project is a story of strategy, technology, and creativity that drives measurable impact.
+        Selected Works With Curious Case Studies and Insight. Every project is a paradigm of strategy, technology, creativity and one powerful human emotion - courage. The courage to believe that data will answer everything.
         </p>
       </PageIntro>
 

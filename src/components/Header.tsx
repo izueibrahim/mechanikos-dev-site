@@ -95,6 +95,7 @@ function MobileNavigation(
             <MobileNavItem href="/case-study">Case Study</MobileNavItem>
             <MobileNavItem href="/products">Products</MobileNavItem>
             <MobileNavItem href="/blog">Blog</MobileNavItem>
+            <MobileNavItem href="/career">Career</MobileNavItem>
             <MobileNavItem href="/contact">Contact</MobileNavItem>
           </ul>
         </nav>
@@ -138,9 +139,10 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
       <ul className="flex rounded-full bg-black px-6 text-sm font-medium text-white shadow-lg backdrop-blur-sm whitespace-nowrap">
         <NavItem href="/about">About</NavItem>
         <NavItem href="/services">Services</NavItem>
-        <NavItem href="/process">Product</NavItem>
+        <NavItem href="/products">Products</NavItem>
         <NavItem href="/case-study">Case Study</NavItem>
         <NavItem href="/blog">Blog</NavItem>
+        <NavItem href="/career">Career</NavItem>
         <NavItem href="/contact">Contact</NavItem>
       </ul>
     </nav>

@@ -262,7 +262,7 @@ const features = [
 
 export const metadata: Metadata = {
   description:
-    'Mechanikos is a 360 marketing and AI technology agency. We build systems of growth — combining data, intelligence, creativity, and technology. Delivering intelligent solutions for optimal strategies, enhanced engagement, and measurable growth.',
+    'We are a 360 marketing and AI powered agency. Our ethos are in systems of growth - an amalgamation of data, innovation, creativity and technology. Together, we formulate solutions for optimal strategies, enchanting engagement and calculated growth',
 }
 
 export default async function Home() {
@@ -289,10 +289,10 @@ export default async function Home() {
             Data. Tech. Marketing.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-          Mechanikos is a 360 marketing and AI technology agency. We build systems of growth — combining data, intelligence, creativity, and technology. Delivering intelligent solutions for optimal strategies, enhanced engagement, and measurable growth.
+          We are a 360 marketing and AI powered agency. Our ethos are in systems of growth - an amalgamation of data, innovation, creativity and technology. Together, we formulate solutions for optimal strategies, enchanting engagement and calculated growth.
           </p>
           <p className="mt-6 text-xl text-neutral-600">
-          At the heart of Cyberjaya, is an award-winning agency that turns data into decisions. Strategy into results.
+          Our motto, or commercial tagline ; “Engaging People, Driving Performance” encapsulates everything how technology should empower humans for the greater good.
           </p>
         </FadeIn>
       </Container>

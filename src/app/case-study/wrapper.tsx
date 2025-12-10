@@ -49,18 +49,6 @@ export default async function CaseStudyLayout({
                       <dt className="font-semibold">Service</dt>
                       <dd>{caseStudy.service}</dd>
                     </div>
-                    {caseStudy.industry && (
-                      <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-t-0 sm:border-l">
-                        <dt className="font-semibold">Industry</dt>
-                        <dd>{caseStudy.industry}</dd>
-                      </div>
-                    )}
-                    {caseStudy.scope && (
-                      <div className="border-t border-neutral-200 px-6 py-4 first:border-t-0 sm:border-t-0 sm:border-l sm:col-span-2">
-                        <dt className="font-semibold">Scope</dt>
-                        <dd>{caseStudy.scope}</dd>
-                      </div>
-                    )}
                   </dl>
                 </div>
               </Container>

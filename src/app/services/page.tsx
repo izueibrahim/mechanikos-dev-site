@@ -87,10 +87,7 @@ export default async function Services() {
     <RootLayout globalData={globalData}>
       <PageIntro eyebrow="Our Services" title="Solutions that drive growth">
         <p>
-          Experience the future with Mechanikos. Our 360 marketing and AI
-          technology services are powered by cutting-edge AI, delivering
-          intelligent solutions for optimal strategies, enhanced engagement, and
-          measurable growth.
+          Embrace the forefront of digital marketing with us. Experience 360 marketing campaigns and tech services powered by AI - delivering intelligent solutions that optimizes strategies, enhancing engagement with measurable growth through data.
         </p>
       </PageIntro>
 
