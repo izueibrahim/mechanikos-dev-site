@@ -1,5 +1,6 @@
 import logo from '@/images/clients/unseal/logomark-dark.svg'
 import imageHero from './hero.jpg'
+import CaseStudyLayout from '../wrapper'
 
 export const caseStudy = {
   client: 'Ministry of Health (MOH)',
@@ -23,6 +24,10 @@ export const metadata = {
   description: caseStudy.description,
 }
 
+export default function Layout({ children }) {
+  return <CaseStudyLayout caseStudy={caseStudy}>{children}</CaseStudyLayout>
+}
+
 ## Goals
 
 We were tasked to bring **national wellness campaign to a new level and redefine fun, healthy living.**
@@ -35,7 +40,7 @@ The primary issue is that Malaysians find it tedious and uninteresting to mainta
 
 ## Approach and Solutions
 
-Utilizing social and digital platforms to enhance social interaction and boost participation in on-ground events, we created a **campaign video with a target audience of 1 million views**, **influencer campaign with a target of 40 influencers**, and **social media & digital online contests**. We organized **319 activities throughout Malaysia**, each specifically designed to cater to different demographic groups for maximum relevance. The main video emphasizes the crucial aspects of BMSS, and gets people moving!
+Utilizing social and digital platforms to enhance social interaction and boost participation in on-ground events, we created a **campaign video with a target audience of 1 million views**, **influencer campaign with a target of 40 influencers**, and **social media &amp; digital online contests**. We organized **319 activities throughout Malaysia**, each specifically designed to cater to different demographic groups for maximum relevance. The main video emphasizes the crucial aspects of BMSS, and gets people moving!
 
 ## What we did
 
@@ -50,7 +55,7 @@ Utilizing social and digital platforms to enhance social interaction and boost p
 
 ## Results
 
-Malaysian's interest in a healthy lifestyle spiked by **2x** and reached an all-year high at the end of the campaign. We organized **319 events** with a successful 2-day launch campaign inaugurated by the Prime Minister and Health Minister at the time; the on-ground events brought **124.3 thousand physical participants**. There was a total of **3.6 million digital engagements**, **84.4 million impressions**, and **26.8 million reach** across all social media platforms.
+Malaysian&apos;s interest in a healthy lifestyle spiked by **2x** and reached an all-year high at the end of the campaign. We organized **319 events** with a successful 2-day launch campaign inaugurated by the Prime Minister and Health Minister at the time; the on-ground events brought **124.3 thousand physical participants**. There was a total of **3.6 million digital engagements**, **84.4 million impressions**, and **26.8 million reach** across all social media platforms.
 
 Throughout the campaign Bulan Malaysia Sihat Sejahtera achieved a stunning **200% surge in conversations and mentions** throughout the month of October 2022.
 
@@ -62,8 +67,3 @@ Throughout the campaign Bulan Malaysia Sihat Sejahtera achieved a stunning **200
   <StatListItem value="26.8M" label="Social Media Reach" />
   <StatListItem value="200%" label="Surge in Conversations" />
 </StatList>
-
-
-
-
-

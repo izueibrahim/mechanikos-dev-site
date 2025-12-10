@@ -1,4 +1,5 @@
 import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
+import BlogArticleWrapper from '../wrapper'
 
 export const article = {
   date: '2023-02-18',
@@ -17,16 +18,20 @@ export const metadata = {
   description: article.description,
 }
 
+export default function Layout({ children }) {
+  return <BlogArticleWrapper article={article}>{children}</BlogArticleWrapper>
+}
+
 ## 1. Efficiency is Hard to Measure
 
-Although almost every practical measure of our productivity decreased significantly after returning to the office, as a management team we felt this incredible uptick in energy. We realised that there is an intangible benefit to seeing everyone’s screen at all times, that isn’t easily measurable in numbers.
+Although almost every practical measure of our productivity decreased significantly after returning to the office, as a management team we felt this incredible uptick in energy. We realised that there is an intangible benefit to seeing everyone&apos;s screen at all times, that isn&apos;t easily measurable in numbers.
 
 Sure, we tried to recreate this feeling during our remote days with employee monitoring software but we always had this nagging doubt that our developers had hacked their way around it.
 
 <TopTip>
   Getting one of those old-timey punch clocks is a great way to monitor
   attendance while maintaining a fun atmosphere. Expect to hear things like
-  “Back at the coalface today!”.
+  &quot;Back at the coalface today!&quot;.
 </TopTip>
 
 ![](./punch-clock.jpg)
@@ -43,8 +48,8 @@ We have been consistently surprised at the fresh energy these new grads brought 
 
 ## 3. Cost Efficiency
 
-Demand is at an all time low for commercial real-estate, which means it’s never been more affordable to cram forty people into an open plan office.
+Demand is at an all time low for commercial real-estate, which means it&apos;s never been more affordable to cram forty people into an open plan office.
 
-What’s more, is we’ve found that we can offer extremely low-cost perks like a snack cupboard or free beer in-lieu of higher salaries. For every foosball table we buy, we find we can offer around 5% less salary per job posting. Our full-time barista is the highest paid employee, after management.
+What&apos;s more, is we&apos;ve found that we can offer extremely low-cost perks like a snack cupboard or free beer in-lieu of higher salaries. For every foosball table we buy, we find we can offer around 5% less salary per job posting. Our full-time barista is the highest paid employee, after management.
 
 ![](./jars.jpg)

@@ -1,5 +1,6 @@
 import logo from '@/images/clients/unseal/logomark-dark.svg'
 import imageHero from './hero.jpg'
+import CaseStudyLayout from '../wrapper'
 
 export const caseStudy = {
   client: 'Ministry of Health (MOH)',
@@ -23,6 +24,10 @@ export const metadata = {
   description: caseStudy.description,
 }
 
+export default function Layout({ children }) {
+  return <CaseStudyLayout caseStudy={caseStudy}>{children}</CaseStudyLayout>
+}
+
 ## Goals
 
 The main objective of **Bulan Malaysia Sihat Sejahtera** is to create awareness among Malaysians that leading a healthy and joyful lifestyle is not only easy but also crucial for improving their overall well-being.
@@ -31,7 +36,7 @@ The main objective of **Bulan Malaysia Sihat Sejahtera** is to create awareness 
 
 **1 in 2 Malaysians are overweight with 1 in 4 being physically inactive.** The primary issue is that Malaysians find it tedious and uninteresting to maintain a healthy lifestyle, leading to a lack of motivation.
 
-## Approach & Solutions
+## Approach &amp; Solutions
 
 **Bulan Malaysia Sihat Sejahtera (BMSS)** is designed to foster a societal change to a healthier nation. In order to encourage Malaysians to adopt a healthier lifestyle, Bulan Malaysia Sihat Sejahtera had to make living healthy enjoyable and captivating. To ensure the success of this campaign, we had to be on all levels of the marketing funnel to reach as many people as possible.
 
@@ -47,7 +52,7 @@ The main objective of **Bulan Malaysia Sihat Sejahtera** is to create awareness 
 
 ## Results
 
-Malaysians' interest in living a healthy lifestyle has increased by **2x** and reached an all-year high at the end of the campaign. Bulan Malaysia Sihat Sejahtera achieves a stunning **200% surge in conversations and mentions** throughout October 2022.
+Malaysians&apos; interest in living a healthy lifestyle has increased by **2x** and reached an all-year high at the end of the campaign. Bulan Malaysia Sihat Sejahtera achieves a stunning **200% surge in conversations and mentions** throughout October 2022.
 
 <StatList>
   <StatListItem value="3.2M+" label="Engagements" />
@@ -55,8 +60,3 @@ Malaysians' interest in living a healthy lifestyle has increased by **2x** and r
   <StatListItem value="68,451" label="Clicks to Website" />
   <StatListItem value="200%" label="Surge in Conversations" />
 </StatList>
-
-
-
-
-

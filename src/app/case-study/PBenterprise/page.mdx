@@ -1,5 +1,6 @@
 import logo from '@/images/clients/family-fund/logomark-dark.svg'
 import imageHero from './hero.jpg'
+import CaseStudyLayout from '../wrapper'
 
 export const caseStudy = {
   client: 'Public Bank',
@@ -23,6 +24,10 @@ export const metadata = {
   description: caseStudy.description,
 }
 
+export default function Layout({ children }) {
+  return <CaseStudyLayout caseStudy={caseStudy}>{children}</CaseStudyLayout>
+}
+
 ## Goals
 
 Public Bank sought to revamp the outdated and cluttered PB Enterprise website and web application. The objective was to modernize the user interface, improve overall user experience for various user groups and ensure the system meets stringent banking-grade security requirements.
@@ -33,15 +38,15 @@ The legacy PB Enterprise public site was running on an outdated CMS with a rigid
 
 With Public Bank being known for its strong stance against scam exploits, every touchpoint — from content management to frontend delivery — had to be built with uncompromising security protocols.
 
-## Approach & Solutions
+## Approach &amp; Solutions
 
-Our approach prioritized security, performance, and user-centric design. We collaborated closely with Public Bank's internal product team to redesign the user experience aligning it with modern UI/UX standards and the bank's digital identity.
+Our approach prioritized security, performance, and user-centric design. We collaborated closely with Public Bank&apos;s internal product team to redesign the user experience aligning it with modern UI/UX standards and the bank&apos;s digital identity.
 
-On the CMS side, we customized Umbraco's back office, tailoring it to Public Bank's content management processes. We introduced modular content blocks, reusable templates, and streamlined publishing to empower non-technical users.
+On the CMS side, we customized Umbraco&apos;s back office, tailoring it to Public Bank&apos;s content management processes. We introduced modular content blocks, reusable templates, and streamlined publishing to empower non-technical users.
 
-For the web application, we engineered a bespoke Bootstrap-based UI framework, carefully designed to comply with the bank's strict architectural limitations that prevented external frameworks.
+For the web application, we engineered a bespoke Bootstrap-based UI framework, carefully designed to comply with the bank&apos;s strict architectural limitations that prevented external frameworks.
 
-Deployment and testing were carried out on Public Bank's internal server environment under a secure development pipeline to maintain full compliance with their IT governance policies.
+Deployment and testing were carried out on Public Bank&apos;s internal server environment under a secure development pipeline to maintain full compliance with their IT governance policies.
 
 ## What we did
 
@@ -55,11 +60,11 @@ Deployment and testing were carried out on Public Bank's internal server environ
 
 ## Results
 
-The new PB Enterprise website is now fully responsive, intuitive, and informative, delivering a seamless experience for all user types. Content is clearly organized — whether it's for a first-time user, repeat customer, or technical decision-maker — making it easy to access key information, navigate to services, or find help.
+The new PB Enterprise website is now fully responsive, intuitive, and informative, delivering a seamless experience for all user types. Content is clearly organized — whether it&apos;s for a first-time user, repeat customer, or technical decision-maker — making it easy to access key information, navigate to services, or find help.
 
 The Umbraco-powered CMS has transformed backend workflows with design ops templates, functional content blocks, and centralized digital identity control — making future updates easier and faster.
 
-Meanwhile, the web application frontend has been completely rebuilt using a custom, lightweight UI framework. It now supports enhanced functionality, improved navigation, and a UX experience that matches Public Bank's standing as a digital leader in Malaysia's banking sector.
+Meanwhile, the web application frontend has been completely rebuilt using a custom, lightweight UI framework. It now supports enhanced functionality, improved navigation, and a UX experience that matches Public Bank&apos;s standing as a digital leader in Malaysia&apos;s banking sector.
 
 <StatList>
   <StatListItem value="100%" label="Responsive Design" />
