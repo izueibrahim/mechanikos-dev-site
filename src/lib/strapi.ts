@@ -45,9 +45,9 @@ async function fetchAPI<T>(
     const data = await response.json()
     return data
   } catch (error) {
-    console.error(`Error fetching from Strapi: ${url}`, error)
-    if (error instanceof Error) {
-      console.error('Error details:', error.message)
+    // Only log in development, and make it less noisy
+    if (process.env.NODE_ENV === 'development') {
+      console.warn(`[Strapi] Connection failed - using fallback data`)
     }
     throw error
   }
