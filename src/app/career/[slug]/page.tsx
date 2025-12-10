@@ -98,7 +98,7 @@ function ApplySection({
           Interested in this role?
         </h3>
         <p className="mt-2 text-sm text-neutral-600">
-          We'd love to hear from you. Submit your application and we'll get back to you soon.
+          We&apos;d love to hear from you. Submit your application and we&apos;ll get back to you soon.
         </p>
         <Button
           onClick={onApply}
