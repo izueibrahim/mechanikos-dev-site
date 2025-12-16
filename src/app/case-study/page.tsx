@@ -21,7 +21,7 @@ import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
 import { formatDate } from '@/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
-import { fetchGlobalData } from '@/lib/globalData'
+// import { fetchGlobalData } from '@/lib/globalData'
 
 function CaseStudies({
   caseStudies,
@@ -146,16 +146,20 @@ export const metadata: Metadata = {
 
 export default async function Work() {
   let caseStudies = await loadCaseStudies()
-  const globalData = await fetchGlobalData()
+  // const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout globalData={globalData}>
+    // <RootLayout globalData={globalData}>
+    <RootLayout>
       <PageIntro
         eyebrow="Our work"
         title="At Mechanikos, we don’t just talk about results—we show them."
       >
         <p>
-        Selected Works With Curious Case Studies and Insight. Every project is a paradigm of strategy, technology, creativity and one powerful human emotion - courage. The courage to believe that data will answer everything.
+          Selected Works With Curious Case Studies and Insight. Every project is
+          a paradigm of strategy, technology, creativity and one powerful human
+          emotion - courage. The courage to believe that data will answer
+          everything.
         </p>
       </PageIntro>
 

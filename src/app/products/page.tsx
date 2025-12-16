@@ -15,7 +15,7 @@ import imageLaptop from '@/images/laptop.jpg'
 import imageMeeting from '@/images/meeting.jpg'
 import imageWhiteboard from '@/images/whiteboard.jpg'
 import { RootLayout } from '@/components/RootLayout'
-import { fetchGlobalData } from '@/lib/globalData'
+// import { fetchGlobalData } from '@/lib/globalData'
 
 function Section({
   title,
@@ -60,13 +60,20 @@ function Discover() {
     <Section title="Cerebrax" image={{ src: imageWhiteboard }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          Pendapat.my is Malaysia’s homegrown platform that transforms public opinion into powerful insights. Picture a true Member of Parliament who listens to our concerns and communicates them to the decision-makers. This is the representation we truly deserve.
+          Pendapat.my is Malaysia’s homegrown platform that transforms public
+          opinion into powerful insights. Picture a true Member of Parliament
+          who listens to our concerns and communicates them to the
+          decision-makers. This is the representation we truly deserve.
         </p>
         <p>
-          We make it simple: you share your thoughts, perspectives, and experiences through Twitter polls and AI-call agent surveys. We then turn those voices into meaningful data that helps brands, organizations, and policymakers understand what Malaysians truly feel.
+          We make it simple: you share your thoughts, perspectives, and
+          experiences through Twitter polls and AI-call agent surveys. We then
+          turn those voices into meaningful data that helps brands,
+          organizations, and policymakers understand what Malaysians truly feel.
         </p>
         <p>
-          At its core, Pendapat.my is more than just polls. It’s a bridge between what Malaysians say and what the nation does.
+          At its core, Pendapat.my is more than just polls. It’s a bridge
+          between what Malaysians say and what the nation does.
         </p>
       </div>
 
@@ -291,13 +298,15 @@ export const metadata: Metadata = {
 }
 
 export default async function Products() {
-  const globalData = await fetchGlobalData()
+  // const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout globalData={globalData}>
+    // <RootLayout globalData={globalData}>
+    <RootLayout>
       <PageIntro eyebrow="Our product" title="How we work">
         <p>
-          We’re not just in the business of offering solutions; we create products that cater to your needs.
+          We’re not just in the business of offering solutions; we create
+          products that cater to your needs.
         </p>
       </PageIntro>
 

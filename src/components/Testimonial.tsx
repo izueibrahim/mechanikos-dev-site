@@ -1,4 +1,3 @@
-import Image, { type ImageProps } from 'next/image'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
@@ -7,11 +6,9 @@ import { GridPattern } from '@/components/GridPattern'
 
 export function Testimonial({
   children,
-  client,
   className,
 }: {
   children: React.ReactNode
-  client: { logo: ImageProps['src']; name: string }
   className?: string
 }) {
   return (
@@ -33,9 +30,6 @@ export function Testimonial({
                 {children}
               </p>
             </blockquote>
-            {/* <figcaption className="mt-10">
-              <Image src={client.logo} alt={client.name} unoptimized />
-            </figcaption> */}
           </figure>
         </FadeIn>
       </Container>

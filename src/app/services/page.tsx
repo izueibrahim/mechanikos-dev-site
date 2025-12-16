@@ -7,7 +7,7 @@ import { List, ListItem } from '@/components/List'
 import { PageIntro } from '@/components/PageIntro'
 import { SectionIntro } from '@/components/SectionIntro'
 import { RootLayout } from '@/components/RootLayout'
-import { fetchGlobalData } from '@/lib/globalData'
+// import { fetchGlobalData } from '@/lib/globalData'
 
 function ServiceCategory({
   title,
@@ -51,14 +51,19 @@ function ServiceList({
           <ul className="space-y-4 text-base text-neutral-600">
             {services.map((service) => (
               <li key={service} className="flex items-start">
-                <span className="mr-3 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-300" />
+                <span className="mt-1 mr-3 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-300" />
                 <div className="flex-1">
-                  <span className="font-medium text-neutral-950">{service}</span>
+                  <span className="font-medium text-neutral-950">
+                    {service}
+                  </span>
                   {subServices && subServices[service] && (
                     <ul className="mt-2 ml-4 space-y-2">
                       {subServices[service].map((subService) => (
-                        <li key={subService} className="flex items-start text-sm">
-                          <span className="mr-2 mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-neutral-200" />
+                        <li
+                          key={subService}
+                          className="flex items-start text-sm"
+                        >
+                          <span className="mt-1.5 mr-2 h-1 w-1 flex-shrink-0 rounded-full bg-neutral-200" />
                           <span>{subService}</span>
                         </li>
                       ))}
@@ -81,20 +86,25 @@ export const metadata: Metadata = {
 }
 
 export default async function Services() {
-  const globalData = await fetchGlobalData()
+  // const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout globalData={globalData}>
+    // <RootLayout globalData={globalData}>
+    <RootLayout>
       <PageIntro eyebrow="Our Services" title="Solutions that drive growth">
         <p>
-          Embrace the forefront of digital marketing with us. Experience 360 marketing campaigns and tech services powered by AI - delivering intelligent solutions that optimizes strategies, enhancing engagement with measurable growth through data.
+          Embrace the forefront of digital marketing with us. Experience 360
+          marketing campaigns and tech services powered by AI - delivering
+          intelligent solutions that optimizes strategies, enhancing engagement
+          with measurable growth through data.
         </p>
       </PageIntro>
 
       <Container className="mt-16">
         <FadeIn>
           <p className="text-lg font-semibold text-neutral-950">
-            At Mechanikos, we don&apos;t just offer services, we offer solutions:
+            At Mechanikos, we don&apos;t just offer services, we offer
+            solutions:
           </p>
         </FadeIn>
       </Container>
@@ -140,9 +150,9 @@ export default async function Services() {
               'Social Media',
             ]}
             subServices={{
-              'CRM': ['Customer Relationship Management'],
-              'SEM': ['Search Engine Marketing'],
-              'SEO': ['Search Engine Optimization'],
+              CRM: ['Customer Relationship Management'],
+              SEM: ['Search Engine Marketing'],
+              SEO: ['Search Engine Optimization'],
             }}
           />
           <ServiceList
@@ -170,10 +180,7 @@ export default async function Services() {
           />
           <ServiceList
             title="Media Production"
-            services={[
-              'Video & Audio Production',
-              'Creative Consultation',
-            ]}
+            services={['Video & Audio Production', 'Creative Consultation']}
             subServices={{
               'Video & Audio Production': ['AI Video Production'],
             }}
@@ -204,4 +211,3 @@ export default async function Services() {
     </RootLayout>
   )
 }
-

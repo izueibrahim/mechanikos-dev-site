@@ -9,32 +9,12 @@ import { List, ListItem } from '@/components/List'
 import { SectionIntro } from '@/components/SectionIntro'
 import { StylizedImage } from '@/components/StylizedImage'
 import { Testimonial } from '@/components/Testimonial'
-import logoBrightPath from '@/images/clients/bright-path/logo-light.svg'
-import logoFamilyFund from '@/images/clients/family-fund/logo-light.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-light.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-light.svg'
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-light.svg'
-import logoNorthAdventures from '@/images/clients/north-adventures/logo-light.svg'
 import logoPhobiaDark from '@/images/clients/phobia/logo-dark.svg'
-import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
-import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/laptop.jpg'
 import mechanikosHeroLogo from '@/images/mechanikos_hero_logo.svg'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
-import { fetchGlobalData } from '@/lib/globalData'
-import { ArrowPathIcon, CloudArrowUpIcon, LockClosedIcon, BriefcaseIcon } from '@heroicons/react/20/solid'
-
-const clients = [
-  ['Phobia', logoPhobiaLight],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
-]
+import { BriefcaseIcon } from '@heroicons/react/20/solid'
 
 function Services() {
   return (
@@ -44,9 +24,7 @@ function Services() {
         title="Experience the future with Mechanikos. Our 360 marketing and AI technology services are powered by cutting-edge AI, delivering intelligent solutions for optimal strategies, enhanced engagement, and measurable growth."
         className="mt-24 sm:mt-32 lg:mt-0 xl:mt-0 2xl:mt-0"
       >
-        <p>
-        At Mechanikos we don’t just offer services, we offer solutions:
-        </p>
+        <p>At Mechanikos we don’t just offer services, we offer solutions:</p>
       </SectionIntro>
       <Container className="mt-16">
         <div className="lg:flex lg:items-center lg:justify-end">
@@ -61,7 +39,7 @@ function Services() {
           </div>
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-132 lg:pl-4">
             <ListItem title="Tech">
-              <ul className="list-disc list-inside space-y-2">
+              <ul className="list-inside list-disc space-y-2">
                 <li>Software Development</li>
                 <li>Data Intelligence Platform</li>
                 <li>Mobile App Development</li>
@@ -70,13 +48,13 @@ function Services() {
               </ul>
             </ListItem>
             <ListItem title="Analytics">
-              <ul className="list-disc list-inside space-y-2">
+              <ul className="list-inside list-disc space-y-2">
                 <li>Social Media Listening</li>
                 <li>Ai Calling</li>
               </ul>
             </ListItem>
             <ListItem title="Growth Marketing">
-              <ul className="list-disc list-inside space-y-2">
+              <ul className="list-inside list-disc space-y-2">
                 <li>CRM</li>
                 <li>SEM</li>
                 <li>SEO</li>
@@ -84,13 +62,13 @@ function Services() {
               </ul>
             </ListItem>
             <ListItem title="Creative Production">
-              <ul className="list-disc list-inside space-y-2">
+              <ul className="list-inside list-disc space-y-2">
                 <li>Creative</li>
                 <li>Brand Identity</li>
                 <li>Video & Audio Production</li>
-                  <ul className="list-disc list-inside space-y-2">
-                    <li>Ai Audio Production</li>
-                  </ul>
+                <ul className="list-inside list-disc space-y-2">
+                  <li>Ai Audio Production</li>
+                </ul>
               </ul>
             </ListItem>
           </List>
@@ -106,26 +84,29 @@ function Products() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="font-display text-base font-semibold">Products</h2>
-          <p className="mt-2 font-display font-medium tracking-tight text-pretty text-neutral-950 sm:text-5xl text-4xl lg:text-balance">
-          We’re not just in the business of offering solutions; we create products that cater to your needs.
+          <p className="mt-2 font-display text-4xl font-medium tracking-tight text-pretty text-neutral-950 sm:text-5xl lg:text-balance">
+            We’re not just in the business of offering solutions; we create
+            products that cater to your needs.
           </p>
-          {/* <p className="mt-6 text-lg/8 text-gray-600">
-            Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas a elementum
-            pulvinar et feugiat blandit at. In mi viverra elit nunc.
-          </p> */}
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
           <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
             {features.map((feature) => (
               <div key={feature.name} className="flex flex-col">
                 <dt className="flex items-center gap-x-3 text-base/7 font-semibold text-gray-900">
-                  <feature.icon aria-hidden="true" className="size-5 flex-none" />
+                  <feature.icon
+                    aria-hidden="true"
+                    className="size-5 flex-none"
+                  />
                   {feature.name}
                 </dt>
                 <dd className="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
                   <p className="flex-auto">{feature.description}</p>
                   <p className="mt-6">
-                    <a href={feature.href} className="text-sm/6 font-semibold hover:text-indigo-500">
+                    <a
+                      href={feature.href}
+                      className="text-sm/6 font-semibold hover:text-indigo-500"
+                    >
                       Learn more <span aria-hidden="true">→</span>
                     </a>
                   </p>
@@ -199,35 +180,6 @@ function CaseStudies({
   )
 }
 
-// function Clients() {
-//   return (
-//     <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
-//       <Container>
-//         <FadeIn className="flex items-center gap-x-8">
-//           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
-//             We’ve worked with hundreds of amazing people
-//           </h2>
-//           <div className="h-px flex-auto bg-neutral-800" />
-//         </FadeIn>
-//         <FadeInStagger faster>
-//           <ul
-//             role="list"
-//             className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4"
-//           >
-//             {clients.map(([client, logo]) => (
-//               <li key={client}>
-//                 <FadeIn>
-//                   <Image src={logo} alt={client} unoptimized />
-//                 </FadeIn>
-//               </li>
-//             ))}
-//           </ul>
-//         </FadeInStagger>
-//       </Container>
-//     </div>
-//   )
-// }
-
 const features = [
   {
     name: 'Cerebrax',
@@ -255,10 +207,9 @@ const features = [
     description:
       'Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.',
     href: '#',
-    icon: BriefcaseIcon
+    icon: BriefcaseIcon,
   },
 ]
-
 
 export const metadata: Metadata = {
   description:
@@ -267,13 +218,11 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   let caseStudies = (await loadCaseStudies()).slice(0, 8)
-  const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout globalData={globalData}>
-      <Container className="relative mt-24 sm:mt-32 md:min-h-screen md:flex md:items-center md:justify-start md:mt-0 overflow-hidden">
-        {/* Large background logo */}
-        <div className="absolute inset-0 flex items-start m-9 justify-center pointer-events-none">
+    <RootLayout>
+      <Container className="relative mt-24 overflow-hidden sm:mt-32 md:mt-0 md:flex md:min-h-screen md:items-center md:justify-start">
+        <div className="pointer-events-none absolute inset-0 m-9 flex items-start justify-center pt-16">
           <Image
             src={mechanikosHeroLogo}
             alt=""
@@ -282,17 +231,21 @@ export default async function Home() {
             unoptimized
           />
         </div>
-        
-        {/* Content */}
+
         <FadeIn className="relative z-10 max-w-3xl">
-          <h1 className="font-display text-5xl font-medium tracking-tight text-balance text-neutral-950 sm:text-7xl">
+          <h1 className="mt-40 font-display text-5xl font-medium tracking-tight text-balance text-neutral-950 sm:mt-40 sm:text-7xl">
             Data. Tech. Marketing.
           </h1>
           <p className="mt-6 text-xl text-neutral-600">
-          We are a 360 marketing and AI powered agency. Our ethos are in systems of growth - an amalgamation of data, innovation, creativity and technology. Together, we formulate solutions for optimal strategies, enchanting engagement and calculated growth.
+            We are a 360 marketing and AI powered agency. Our ethos are in
+            systems of growth - an amalgamation of data, innovation, creativity
+            and technology. Together, we formulate solutions for optimal
+            strategies, enchanting engagement and calculated growth.
           </p>
           <p className="mt-6 text-xl text-neutral-600">
-          Our motto, or commercial tagline ; “Engaging People, Driving Performance” encapsulates everything how technology should empower humans for the greater good.
+            Our motto, or commercial tagline ; “Engaging People, Driving
+            Performance” encapsulates everything how technology should empower
+            humans for the greater good.
           </p>
         </FadeIn>
       </Container>
@@ -301,23 +254,21 @@ export default async function Home() {
 
       <Products />
 
-      {/* <Clients /> */}
-
       <CaseStudies caseStudies={caseStudies} />
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={
-          { 
-          name: 'Phobia', 
-          logo: logoPhobiaDark 
-          }
-        }
+        // client={{
+        //   name: 'Phobia',
+        //   logo: logoPhobiaDark,
+        // }}
       >
-        Ready to Power Your Brand with 360 marketing and AI technology? Let us build your systems of growth.
+        Ready to Power Your Brand with 360 marketing and AI technology? Let us
+        build your systems of growth.
         <br />
         <br />
-        Whether it&apos;s strategy, tech, creative, media, or analytics, we make your brand smarter, faster, and impossible to ignore.
+        Whether it&apos;s strategy, tech, creative, media, or analytics, we make
+        your brand smarter, faster, and impossible to ignore.
       </Testimonial>
 
       <ContactSection />

@@ -24,7 +24,7 @@ import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
 import { loadArticles } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
 import CircularGallery from './CircularGallery'
-import { fetchGlobalData } from '@/lib/globalData'
+// import { fetchGlobalData } from '@/lib/globalData'
 
 export const metadata = {
   title: 'About Us',
@@ -51,8 +51,8 @@ function Culture() {
             are allowed to have LinkedIn profiles.
           </GridListItem>
           <GridListItem title="Trust" invert>
-            We don&apos;t care when our team works just as long as they are working
-            every waking second.
+            We don&apos;t care when our team works just as long as they are
+            working every waking second.
           </GridListItem>
           <GridListItem title="Compassion" invert>
             You never know what someone is going through at home and we make
@@ -198,13 +198,17 @@ function Team() {
 
 export default async function About() {
   let blogArticles = (await loadArticles()).slice(0, 2)
-  const globalData = await fetchGlobalData()
+  // const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout globalData={globalData}>
+    // <RootLayout globalData={globalData}>
+    <RootLayout>
       <PageIntro eyebrow="About us" title="Data. Tech. Marketing">
         <p>
-          That&apos;s our secret sauce. We take data, sprinkle in some tech magic, and mix it with marketing know-how to cook up campaigns that actually work. Think of us as your 360° growth engine—smart, fast, and impossible to ignore.
+          That&apos;s our secret sauce. We take data, sprinkle in some tech
+          magic, and mix it with marketing know-how to cook up campaigns that
+          actually work. Think of us as your 360° growth engine—smart, fast, and
+          impossible to ignore.
         </p>
         {/* <div className="mt-10 max-w-2xl space-y-6 text-base">
           <p>
@@ -227,8 +231,13 @@ export default async function About() {
 
       <Team />
 
-      <div className="mt-24 sm:mt-32 lg:mt-40 h-[400px] sm:h-[500px] lg:h-[800px] relative overflow-hidden">
-        <CircularGallery bend={0} textColor="#000000" borderRadius={0.05} scrollEase={0.05} />
+      <div className="relative mt-24 h-[400px] overflow-hidden sm:mt-32 sm:h-[500px] lg:mt-40 lg:h-[800px]">
+        <CircularGallery
+          bend={0}
+          textColor="#000000"
+          borderRadius={0.05}
+          scrollEase={0.05}
+        />
       </div>
 
       {/* <PageLinks

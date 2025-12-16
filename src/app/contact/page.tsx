@@ -10,7 +10,7 @@ import { Offices } from '@/components/Offices'
 import { PageIntro } from '@/components/PageIntro'
 import { SocialMedia } from '@/components/SocialMedia'
 import { RootLayout } from '@/components/RootLayout'
-import { fetchGlobalData } from '@/lib/globalData'
+// import { fetchGlobalData } from '@/lib/globalData'
 
 function TextInput({
   label,
@@ -148,10 +148,11 @@ export const metadata: Metadata = {
 }
 
 export default async function Contact() {
-  const globalData = await fetchGlobalData()
+  // const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout globalData={globalData}>
+    // <RootLayout globalData={globalData}>
+    <RootLayout>
       <PageIntro eyebrow="Contact us" title="Let’s work together">
         <p>We can’t wait to hear from you.</p>
       </PageIntro>
