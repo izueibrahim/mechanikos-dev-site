@@ -19,7 +19,9 @@ function JobMeta({ position }: { position: CareerPosition }) {
       <dl className="grid grid-cols-1 gap-6 text-sm sm:grid-cols-3">
         <div>
           <dt className="font-semibold text-neutral-950">Location</dt>
-          <dd className="mt-1 text-neutral-600">{position.location}, Malaysia</dd>
+          <dd className="mt-1 text-neutral-600">
+            {position.location}, Malaysia
+          </dd>
         </div>
         <div>
           <dt className="font-semibold text-neutral-950">Employment Type</dt>
@@ -58,7 +60,7 @@ function JobDetails({ position }: { position: CareerPosition }) {
         <ul className="mt-6 space-y-4 text-base text-neutral-600">
           {position.responsibilities.map((item, index) => (
             <li key={index} className="flex items-start">
-              <span className="mr-4 mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-950" />
+              <span className="mt-1.5 mr-4 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-950" />
               <span>{item}</span>
             </li>
           ))}
@@ -74,7 +76,7 @@ function JobDetails({ position }: { position: CareerPosition }) {
         <ul className="mt-6 space-y-4 text-base text-neutral-600">
           {position.skills.map((item, index) => (
             <li key={index} className="flex items-start">
-              <span className="mr-4 mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-950" />
+              <span className="mt-1.5 mr-4 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-950" />
               <span>{item}</span>
             </li>
           ))}
@@ -84,12 +86,12 @@ function JobDetails({ position }: { position: CareerPosition }) {
   )
 }
 
-function ApplySection({ 
-  position, 
-  onApply 
-}: { 
+function ApplySection({
+  position,
+  onApply,
+}: {
   position: CareerPosition
-  onApply: () => void 
+  onApply: () => void
 }) {
   return (
     <FadeIn>
@@ -98,12 +100,10 @@ function ApplySection({
           Interested in this role?
         </h3>
         <p className="mt-2 text-sm text-neutral-600">
-          We&apos;d love to hear from you. Submit your application and we&apos;ll get back to you soon.
+          We&apos;d love to hear from you. Submit your application and
+          we&apos;ll get back to you soon.
         </p>
-        <Button
-          onClick={onApply}
-          className="mt-6 w-full justify-center"
-        >
+        <Button onClick={onApply} className="mt-6 w-full justify-center">
           Apply now
         </Button>
       </div>
@@ -116,14 +116,14 @@ export default function CareerPosition() {
   const [globalData, setGlobalData] = useState<any>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  useEffect(() => {
-    async function loadGlobalData() {
-      const { fetchGlobalData } = await import('@/lib/globalData')
-      const data = await fetchGlobalData()
-      setGlobalData(data)
-    }
-    loadGlobalData()
-  }, [])
+  // useEffect(() => {
+  //   async function loadGlobalData() {
+  //     const { fetchGlobalData } = await import('@/lib/globalData')
+  //     const data = await fetchGlobalData()
+  //     setGlobalData(data)
+  //   }
+  //   loadGlobalData()
+  // }, [])
 
   const position = careerPositions.find((p) => p.id === params.slug)
 
@@ -132,11 +132,9 @@ export default function CareerPosition() {
   }
 
   return (
-    <RootLayout globalData={globalData}>
-      <PageIntro
-        eyebrow="Career"
-        title={position.title}
-      >
+    // <RootLayout globalData={globalData}>
+    <RootLayout>
+      <PageIntro eyebrow="Career" title={position.title}>
         <p>
           <Link
             href="/career"
@@ -157,7 +155,10 @@ export default function CareerPosition() {
             <JobDetails position={position} />
           </div>
           <div className="lg:col-span-1">
-            <ApplySection position={position} onApply={() => setIsModalOpen(true)} />
+            <ApplySection
+              position={position}
+              onApply={() => setIsModalOpen(true)}
+            />
           </div>
         </div>
       </Container>
