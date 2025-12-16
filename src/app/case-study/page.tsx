@@ -167,7 +167,7 @@ export default async function Work() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
+        // client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
       >
         We approached <em>Mechanikos</em> because we loved their past work. They
         delivered something remarkably similar in record time.
