@@ -20,7 +20,6 @@ import logoTmPayu from '@/images/clients/tm-payu/tm-logo.svg'
 import { formatDate } from '@/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
-import { fetchGlobalData } from '@/lib/globalData'
 
 function CaseStudies({
   caseStudies,
@@ -98,11 +97,9 @@ function CaseStudies({
 }
 
 const clients = [
-  ['Phobia', logoPhobia],
   ['Pb Enterprise', logoPbEnterprise],
   ['Anms', logoAnms],
   ['Tm Payu', logoTmPayu],
-  ['North Adventures', logoNorthAdventures],
 ]
 
 // function Clients() {
@@ -142,10 +139,9 @@ export const metadata: Metadata = {
 
 export default async function Work() {
   let caseStudies = await loadCaseStudies()
-  const globalData = await fetchGlobalData()
 
   return (
-    <RootLayout globalData={globalData}>
+    <RootLayout>
       <PageIntro
         eyebrow="Our work"
         title="At Mechanikos, we don’t just talk about results—we show them."
@@ -159,7 +155,6 @@ export default async function Work() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'TM Payu', logo: logoTmPayu }}
       >
         We approached <em>Mechanikos</em> because we loved their past work. They
         delivered something remarkably similar in record time.
