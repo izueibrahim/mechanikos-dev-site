@@ -12,16 +12,15 @@ import { PageIntro } from '@/components/PageIntro'
 import { Testimonial } from '@/components/Testimonial'
 import logoBrightPath from '@/images/clients/bright-path/logo-dark.svg'
 import logoFamilyFund from '@/images/clients/family-fund/logo-dark.svg'
-import logoGreenLife from '@/images/clients/green-life/logo-dark.svg'
-import logoHomeWork from '@/images/clients/home-work/logo-dark.svg'
-import logoMailSmirk from '@/images/clients/mail-smirk/logo-dark.svg'
 import logoNorthAdventures from '@/images/clients/north-adventures/logo-dark.svg'
 import logoPhobia from '@/images/clients/phobia/logo-dark.svg'
-import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
+import logoAnms from '@/images/clients/anms/moh-logo.webp'
+import logoPbEnterprise from '@/images/clients/pb-enterprise/pb-logo.svg'
+import logoTmPayu from '@/images/clients/tm-payu/tm-logo.svg'
 import { formatDate } from '@/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 import { RootLayout } from '@/components/RootLayout'
-// import { fetchGlobalData } from '@/lib/globalData'
+import { fetchGlobalData } from '@/lib/globalData'
 
 function CaseStudies({
   caseStudies,
@@ -100,43 +99,40 @@ function CaseStudies({
 
 const clients = [
   ['Phobia', logoPhobia],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
+  ['Pb Enterprise', logoPbEnterprise],
+  ['Anms', logoAnms],
+  ['Tm Payu', logoTmPayu],
   ['North Adventures', logoNorthAdventures],
 ]
 
-function Clients() {
-  return (
-    <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <FadeIn>
-        <h2 className="font-display text-2xl font-semibold text-neutral-950">
-          You’re in good company
-        </h2>
-      </FadeIn>
-      <FadeInStagger className="mt-10" faster>
-        <Border as={FadeIn} />
-        <ul
-          role="list"
-          className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
-        >
-          {clients.map(([client, logo]) => (
-            <li key={client} className="group">
-              <FadeIn className="overflow-hidden">
-                <Border className="pt-12 group-nth-[-n+2]:-mt-px sm:group-nth-3:-mt-px lg:group-nth-4:-mt-px">
-                  <Image src={logo} alt={client} unoptimized />
-                </Border>
-              </FadeIn>
-            </li>
-          ))}
-        </ul>
-      </FadeInStagger>
-    </Container>
-  )
-}
+// function Clients() {
+//   return (
+//     <Container className="mt-24 sm:mt-32 lg:mt-40">
+//       <FadeIn>
+//         <h2 className="font-display text-2xl font-semibold text-neutral-950">
+//           You’re in good company
+//         </h2>
+//       </FadeIn>
+//       <FadeInStagger className="mt-10" faster>
+//         <Border as={FadeIn} />
+//         <ul
+//           role="list"
+//           className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
+//         >
+//           {clients.map(([client, logo]) => (
+//             <li key={client} className="group">
+//               <FadeIn className="overflow-hidden">
+//                 <Border className="pt-12 group-nth-[-n+2]:-mt-px sm:group-nth-3:-mt-px lg:group-nth-4:-mt-px">
+//                   <Image src={logo} alt={client} unoptimized />
+//                 </Border>
+//               </FadeIn>
+//             </li>
+//           ))}
+//         </ul>
+//       </FadeInStagger>
+//     </Container>
+//   )
+// }
 
 export const metadata: Metadata = {
   title: 'Our Work',
@@ -146,20 +142,16 @@ export const metadata: Metadata = {
 
 export default async function Work() {
   let caseStudies = await loadCaseStudies()
-  // const globalData = await fetchGlobalData()
+  const globalData = await fetchGlobalData()
 
   return (
-    // <RootLayout globalData={globalData}>
-    <RootLayout>
+    <RootLayout globalData={globalData}>
       <PageIntro
         eyebrow="Our work"
         title="At Mechanikos, we don’t just talk about results—we show them."
       >
         <p>
-          Selected Works With Curious Case Studies and Insight. Every project is
-          a paradigm of strategy, technology, creativity and one powerful human
-          emotion - courage. The courage to believe that data will answer
-          everything.
+        Every project is a story of strategy, technology, and creativity that drives measurable impact.
         </p>
       </PageIntro>
 
@@ -167,13 +159,13 @@ export default async function Work() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        // client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
+        client={{ name: 'TM Payu', logo: logoTmPayu }}
       >
         We approached <em>Mechanikos</em> because we loved their past work. They
         delivered something remarkably similar in record time.
       </Testimonial>
 
-      <Clients />
+      {/* <Clients /> */}
 
       <ContactSection />
     </RootLayout>

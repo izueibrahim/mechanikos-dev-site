@@ -10,11 +10,11 @@ const navigation = [
   {
     title: 'Work',
     links: [
-      { title: 'PBenterprise', href: '/case-study/PBenterprise' },
-      { title: 'TM Payu', href: '/case-study/tm-payu' },
-      { title: 'TM Data Lake', href: '/case-study/tm-data-lake' },
       { title: 'ANMS', href: '/case-study/anms' },
       { title: 'BMSS', href: '/case-study/bmss' },
+      { title: 'TM Payu', href: '/case-study/tm-payu' },
+      { title: 'TM Data Lake', href: '/case-study/tm-data-lake' },
+      { title: 'PBenterprise', href: '/case-study/PBenterprise' },
       {
         title: (
           <>
@@ -30,7 +30,6 @@ const navigation = [
     links: [
       { title: 'About', href: '/about' },
       { title: 'Process', href: '/process' },
-      { title: 'Blog', href: '/blog' },
       { title: 'Career', href: '/career' },
       { title: 'Contact us', href: '/contact' },
     ],

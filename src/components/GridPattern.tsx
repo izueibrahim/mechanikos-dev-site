@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 function Block({
@@ -28,7 +28,9 @@ export function GridPattern({
   yOffset?: number
   interactive?: boolean
 }) {
-  let id = useId()
+  // Generate a stable ID based on yOffset and interactive to prevent hydration mismatches
+  // This ensures each GridPattern instance has a unique, stable ID between server and client
+  let id = useMemo(() => `grid-pattern-${yOffset}-${interactive ? 'i' : 's'}`, [yOffset, interactive])
   let ref = useRef<React.ElementRef<'svg'>>(null)
   let currentBlock = useRef<[x: number, y: number] | undefined>(undefined)
   let counter = useRef(0)
